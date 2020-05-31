@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+ 
+  <head>
+    <title>LOGIN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<!-- 링크 색상 없애기 -->
+    <style type="text/css">
+     a:link { color: black; text-decoration: none;}
+     a:visited { color: black; text-decoration: none;}
+     a:hover { color: black; text-decoration: underline;}
+    </style>
+ 
+  </head>
+ 
+ 
+  <body>
+    <!-- 로그인 만들기 -->
+    <div class="loginform">
+      <ul>
+        <li><a href="login.html">로그인</a></li>
+        <li><a href="">메이페이지</a></li>
+      </ul>
+    </div>
+ 
+    <div id="container">
+
+      <!-- 로그인 폼 CSS -->
+      <div id="loginer">
+        <div id="form">
+          <form action="http://localhost:8080/result" method="post" enctype="multipart/form-data">
+            <fieldset>
+              <legend>LOGIN !</legend>
+              <input type="text" name="id" placeholder="Enter Your Email">
+              <br><br>
+              <input type="password" name="pw" placeholder="Enter Your Password">
+              <br><br>
+              <button type="submit"><p>LOGIN</p></button>
+              <br>
+              You Don't Have Your Account?<a href="signup.html"><p>SIGN IN</p></a>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
