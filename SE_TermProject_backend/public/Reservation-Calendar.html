@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Reservation Calendar</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+    <link href="fullCalendar/core/main.css" rel='stylesheet' />
+    <link href='fullCalendar/daygrid/main.css' rel='stylesheet' />
+    <script src='fullCalendar/core/main.js'></script>
+    <script src='fullCalendar/daygrid/main.js'></script>
+    <script src='fullCalendar/interaction/main.js'></script>
+
+    <script>
+        var calendar;
+        var events;
+        var scheduleId;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: ['dayGrid', 'interaction'],
+                dateClick: function (info) {
+                    $('#exampleModalCenter').modal('show');
+
+                    document.getElementById("Date").value = info.dateStr;
+                },
+                eventClick: function (info) {
+                    $('#edit_reservation').modal('show');
+
+                    scheduleId = info.event._def["publicId"];
+                    var data = info.event._def["title"].split("\n");
+
+                    function date_to_str(format) {
+                        var year = format.getFullYear();
+                        var month = format.getMonth() + 1;
+                        if (month < 10) month = '0' + month;
+                        var date = format.getDate();
+                        if (date < 10) date = '0' + date;
+                        var hour = format.getHours();
+                        if (hour < 10) hour = '0' + hour;
+                        var min = format.getMinutes();
+                        if (min < 10) min = '0' + min;
+
+                        return year + "-" + month + "-" + date;
+                    }
+
+                    document.getElementById("Name_edit").value = data[0];
+                    document.getElementById("Date_edit").value = date_to_str(info.event.start);
+                    document.getElementById("Time_edit").value = data[2].substring(6, data[2].len);
+                    document.getElementById("Doctor_edit").value = data[1].substring(4, data[1].len);
+                }
+            });
+
+            calendar.render();
+
+            calendar.on('dateClick', function (info) {
+                console.log('clicked on', info.dateStr)
+            })
+
+            calendar.on('eventClick', function (info) {
+                console.log("clicked on event", info.dateStr)
+            })
+        });
+    </script>
+
+</head>
+<style type="text/css">
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 30px;
+        color: #216182;
+    }
+
+    label {
+        display: block;
+        margin-top: 20px;
+        letter-spacing: 2px;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 459px;
+    }
+
+    input, textarea {
+        width: 439px;
+        height: 27px;
+        background-color: #efefef;
+        border-radius: 6px;
+        border: 1px solid #dedede;
+        padding: 10px;
+        margin-top: 3px;
+        font-size: 0.9em;
+        color: #3a3a3a;
+    }
+
+        input:focus, textarea:focus {
+            border: 1px solid #97d6eb;
+        }
+
+    textarea {
+        height: 60px;
+        background-color: #efefef;
+    }
+
+    #submit {
+        width: 127px;
+        height: 48px;
+        text-align: center;
+        border: none;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+        #submit:hover {
+            color: #fff;
+            background-color: #216282;
+            opacity: 0.9;
+        }
+
+    .reservation_form {
+        width: 127px;
+        height: 48px;
+        text-align: center;
+        border: none;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+        .reservation_form:hover {
+            color: #fff;
+            background-color: #216282;
+            opacity: 0.9;
+        }
+
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+
+        .close-button:hover {
+            background-color: darkgray;
+        }
+</style>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">GACHON ESTETIC CRM SYSTEM</a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="images/user2.png" width="50" height="50" />
+                </div>
+                <div class="info-container">
+                    <div class="name" id="user-name_" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="email" id="user-email_"></div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li><a id="SIGNOUT"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MENU LIST</li>
+                    <li>
+                        <a href="index.html">
+                            <img src="images/home.png" width="30px" height="30px" />
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="Customer-Information.html">
+                            <img src="images/info.png" width="30px" height="30px" />
+                            <span>Customer information</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Customer-Consultation.html">
+                            <img src="images/consultation.png" width="30px" height="30px" />
+                            <span>Customer Consultation</span>
+                        </a>
+                    </li>
+
+
+                    <li class="active">
+                        <a href="Reservation-Calendar.html">
+                            <img src="images/calendar.png" width="30px" height="30px" />
+                            <span>Reservation Calender</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <!-- edit_reservatio form -->
+            <div class="modal fade" id="edit_reservation" tabindex="-1" role="dialog" aria-labelledby="edit_reservation" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">예약 변경</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body" style="text-align: center;">
+                            <form name="Schedule" method="POST" target="temp">
+
+                                <input type="text" id="Name_edit" name="Name" placeholder="Name" required="required" readonly>
+                                <label></label>
+                                <input type="date" id="Date_edit" name="Date" placeholder="Date" required="required">
+                                <label></label>
+                                <input type="time" id="Time_edit" name="Time" placeholder="Time" required="required">
+                                <label></label>
+                                <input type="text" id="Doctor_edit" name="Doctor" placeholder="Doctor" required="required">
+                                <label></label>
+
+
+                                <input type="button" class="reservation_form" id="cancel_edit" data-dismiss="modal" onclick="deleteSchedule(scheduleId)" value="삭제하기">
+                                <input type="submit" class="reservation_form" id="submit_edit" onclick="editSchedule(scheduleId)" value="수정하기">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">예약 추가</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="text-align: center;">
+                            <form name="Schedule" method="POST" target="temp">
+
+                                <input type="text" id="Name" name="Name" placeholder="Name" required="required">
+                                <label></label>
+                                <input type="date" id="Date" name="Date" placeholder="Date" required="required">
+                                <label></label>
+                                <input type="time" id="Time" name="Time" placeholder="Time" required="required">
+                                <label></label>
+                                <input type="text" id="Doctor" name="Doctor" placeholder="Doctor" required="required">
+                                <label></label>
+                                <input type="button" class="reservation_form" id="cancel" data-dismiss="modal" value="취소">
+                                <input type="submit" class="reservation_form" id="submit" onclick="addSchedule()" value="저장하기">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="button" id="filter_btn" onclick="filterEvent(firebase.auth().currentUser.displayName)" value="필터링">
+
+            <div id='calendar'>
+            </div>
+        </div>
+    </section>
+
+    <iframe id="if" name="temp" style="width:0px; height:0px; visibility:hidden"></iframe>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="js/pages/demo.js"></script>
+
+    <!-- Firebase Js-->
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="js/firebase/fb-init.js"></script>
+    <script src="js/firebase/fb-main-user.js"></script>
+    <script src="js/firebase/fb-calendar.js"></script>
+
+</body>
+</html>

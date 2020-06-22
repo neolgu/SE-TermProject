@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>customer information</title>
+
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">\
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">GACHON ESTETIC CRM SYSTEM</a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="images/user2.png" width="50" height="50" />
+                </div>
+                <div class="info-container">
+                    <div class="name" id="user-name_" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="email" id="user-email_"></div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li><a id="SIGNOUT"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MENU LIST</li>
+                    <li>
+                        <a href="index.html">
+                            <img src="images/home.png" width="30px" height="30px" />
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="Customer-Information.html">
+                            <img src="images/info.png" width="30px" height="30px" />
+                            <span>Customer information</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Customer-Consultation.html">
+                            <img src="images/consultation.png" width="30px" height="30px" />
+                            <span>Customer Consultation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Reservation-Calendar.html">
+                            <img src="images/calendar.png" width="30px" height="30px" />
+                            <span>Reservation Calender</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                <li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>
+            </ul>
+
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="block-header">
+                    <h2>Customer Information</h2>
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Add Customer
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">고객정보</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="tab-content">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="NameSurname" class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="name" name="name" placeholder="name" value="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Email" class="col-sm-2 control-label">Birth of data</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <input type="date" class="form-control" id="birth" name="birth" placeholder="Email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">contact number</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <input type="text" class="form-control" id="contact-number" name="contact-number" placeholder="contact number" value="" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="add-customer-btn" data-dismiss="modal" class="btn btn-primary">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--For customer search bar-->
+
+
+                <div class="box">
+                    <div class="container-4">
+                        <form>
+                            <fieldset>
+                                <table>
+                                    <tr>
+                                        <td><input class="cus_search" type="search" id="search-name" placeholder="이름"></td>
+                                        <td style="padding-left:15px"><input class="cus_search" type="date" id="search-birth" placeholder="생년월일"></td>
+                                        <td style="padding-left:15px" rowspan="2"><input class="search_btn" type="button" style="text-align: center;" id="search-btn" value="search" onclick="search()"></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div>
+                    <p class="font_info_consult" id="txt_con_info">
+                        고객 이름과 생년월일을 검색해주세요!
+                    </p>
+                </div>
+
+
+                <script>
+                    function search() {
+                        document.getElementById("informatio_form").style = "display:none"
+                        document.getElementById("search_result").style = "display:block"
+                        document.getElementById("addform").style = "display:none"
+                    }
+                </script>
+                <!--For customer search bar End-->
+                <!--For customer serach Result Start-->
+                <div class="card" id="search_result" style="display: block;">
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-hover dashboard-task-infos">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>customer name</th>
+                                        <th>Birth</th>
+                                        <th>Phone</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody class="customer-lists" id="customer-lists">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!--For customer serach Result End-->
+
+                <div class="card" id="informatio_form" style="display:none">
+
+                    <div class="body">
+
+                        <div>
+                            <button type="button" class="button" id="info_prev_btn" style="border-radius: 5px;" style="background-color:white">BACK</button>
+
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Profile</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="NameSurname" class="col-sm-2 control-label">Name</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="text" class="form-control" id="NameSurname" name="NameSurname" placeholder="name" value=""  required> -->
+                                                    <input type="text" class="form-control" id="txt1" name="NameSurname" placeholder="name" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Email" class="col-sm-2 control-label">Birth of data</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="date" class="form-control" id="Email" name="Email" placeholder="Email"  required> -->
+                                                    <input type="date" class="form-control" id="txt2" name="birth_date" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">contact number</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="text" class="form-control" id="Email" name="Email" placeholder="contact number" value="" required> -->
+                                                    <input type="text" class="form-control" id="txt3" name="contact_number" placeholder="contact number" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="InputSkills" class="col-sm-2 control-label">Level</label>
+                                            <div class="col-sm-9">
+                                                <div class="text">
+                                                    <blockquote><p id="level">SILVER</p></blockquote>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="NameSurname" class="col-sm-2 control-label">판매</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="number" class="form-control" id="NameSurname" name="Name" placeholder="Name Surname" value="Marc K. Hammond" required> -->
+                                                    <input type="number" class="form-control" id="txt4" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="InputExperience" class="col-sm-2 control-label">예약</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="number" class="form-control" id="Email" name="Email" value="example@example.com" required> -->
+                                                    <input type="number" class="form-control" id="txt5" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="InputSkills" class="col-sm-2 control-label">상담</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="number" class="form-control" id="Email" name="Email" value="example@example.com" required> -->
+                                                    <input type="number" class="form-control" id="txt6" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="OldPassword" class="col-sm-2 control-label"> Points </label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="number" class="form-control" id="OldPassword" name="OldPassword" required> -->
+                                                    <input type="number" class="form-control" id="txt7" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="NewPassword" class="col-sm-2 control-label">COUPONS</label>
+                                            <div class="col-sm-9">
+                                                <div class="form-line">
+                                                    <!-- <input type="number" class="form-control" id="OldPassword" name="OldPassword" required> -->
+                                                    <input type="number" class="form-control" id="txt8" readonly />
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="button" class="btn btn-danger" id="edit-customer-btn">EDIT</button>
+                                                <button type="button" class="btn btn-danger" id="delete-customer-btn">DELETE</button>
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        function back_to_cus_list() {
+            document.getElementById("informatio_form").style = "display:none"
+            document.getElementById("search_result").style = "display:block"
+        }
+    </script>
+
+
+
+
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+
+    <!-- Demo Js -->
+    <script src="js/pages/demo.js"></script>
+
+    <!--Firebase Js-->
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="js/firebase/fb-init.js"></script>
+    <script src="js/firebase/fb-main-user.js"></script>
+    <script src="js/firebase/fb-customer-information.js"></script>
+</body>
+
+</html>

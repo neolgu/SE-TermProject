@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Home</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">GACHON ESTETIC CRM SYSTEM </a>
+            </div>
+
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="./images/user2.png" width="50" height="50" />
+                </div>
+                <div class="info-container">
+                    <div class="name" id="user-name_" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="email" id="user-email_"></div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li><a id="SIGNOUT"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MENU LIST</li>
+                    <li class="active">
+                        <a href="index.html">
+                            <img src="images/home.png" width="30px" height="30px" />
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Customer-Information.html">
+                            <img src="images/info.png" width="30px" height="30px" />
+                            <span>Customer information</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Customer-Consultation.html">
+                            <img src="images/consultation.png" width="30px" height="30px" />
+                            <span>Customer Consultation</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="Reservation-Calendar.html">
+                            <img src="images/calendar.png" width="30px" height="30px" />
+                            <span>Reservation Calender</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+
+
+        <!-- #END# Left Sidebar -->
+
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+            </div>
+
+
+            <div class="row clearfix">
+                <!-- Task Info -->
+
+                <div class="card">
+                    <div class="header">
+                        <h2>Today's reservation</h2>
+
+
+                        <div class="container">
+                            <div class="my-calendar clearfix">
+                                <div class="clicked-date">
+                                    <div class="cal-day"></div>
+                                    <div class="cal-date"></div>
+                                </div>
+                                <div class="calendar-box">
+                                    <div class="ctr-box clearfix">
+                                        <button type="button" title="prev" class="btn-cal prev">
+                                        </button>
+                                        <span class="cal-month"></span>
+                                        <span class="cal-year"></span>
+                                        <button type="button" title="next" class="btn-cal next">
+                                        </button>
+                                    </div>
+                                    <table class="cal-table">
+                                        <thead>
+                                            <tr>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;M</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;T</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;F</th>
+                                                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="cal-body"></tbody>
+                                    </table>
+                                </div>
+
+                                <!-- // .my-calendar -->
+                            </div>
+
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>customer name</th>
+                                            <th>state</th>
+                                            <th>doctor</th>
+                                            <th>time</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody id="reservation-status">
+                                    </tbody>
+                                </table>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- #END# Task Info -->
+
+                </div>
+
+            </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="plugins/node-waves/waves.js"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="plugins/raphael/raphael.min.js"></script>
+    <script src="plugins/morrisjs/morris.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="plugins/flot-charts/jquery.flot.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Custom Js -->
+    <script src="js/admin.js"></script>
+    <script src="js/pages/index.js"></script>
+
+    <!-- Firebase -->
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js'></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+    <script src="js/firebase/fb-init.js"></script>
+    <script src="js/firebase/fb-main-user.js"></script>
+    <script src="js/firebase/fb-calender-reservation.js"></script>
+
+
+    <!-- Demo Js -->
+    <script src="js/pages/demo.js"></script>
+
+</body>
+
+
+</html>

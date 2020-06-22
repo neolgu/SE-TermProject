@@ -1,0 +1,632 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Customer Consultation</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="index.html">GACHON ESTETIC CRM SYSTEM</a>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="images/user2.png" width="50" height="50" />
+                </div>
+
+                <div class="info-container">
+                    <div class="name" id="user-name_" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="email" id="user-email_"></div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li><a id="SIGNOUT"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MENU LIST</li>
+                    <li>
+                        <a href="index.html">
+                            <img src="images/home.png" width="30px" height="30px" />
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Customer-Information.html">
+                            <img src="images/info.png" width="30px" height="30px" />
+                            <span>Customer information</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="Customer-Consultation.html">
+                            <img src="images/consultation.png" width="30px" height="30px" />
+                            <span>Customer Consultation</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="Reservation-Calendar.html">
+                            <img src="images/calendar.png" width="30px" height="30px" />
+                            <span>Reservation Calender</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+
+        <!-- #END# Left Sidebar -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="block-header">
+                    <h2>Customer Consultation</h2>
+                </div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Add Consulting
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">상담내역</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form_validation" method="POST">
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" name="name", id="name" required> -->
+                                            <input type="text" class="form-control" id="txt1_cus" />
+                                            <label class="form-label">Customer Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <label class="form-label">Birth</label>
+                                            <input type="date" class="form-control" name="birth" required, id="birth_cus">
+
+                                            <script>
+                                                document.getElementById('birth_cus').valueAsDate = new Date();
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="date" class="form-control" name="date" required, id="now_date_cus">
+                                            <label class="form-label">Consultation Date</label>
+                                            <script>
+                                                document.getElementById('now_date_cus').valueAsDate = new Date();
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" id="counselor" required> -->
+                                            <input type="text" class="form-control" id="phone_cus" />
+
+                                            <label class="form-label">Phone-number</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            Consultation Type&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="checkbox" class="filled-in" id="treatment_cus" />
+                                            <label for="treatment_cus">Treatment&nbsp;&nbsp;&nbsp;</label>
+
+                                            <input type="checkbox" id="beauty_cus" class="filled-in" />
+                                            <label for="beauty_cus">Beauty</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" id="counselor" required> -->
+                                            <input type="text" class="form-control" id="txt6_cus" />
+
+                                            <label class="form-label">Counselor</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" id="counsultation-title" required> -->
+                                            <input type="text" class="form-control" id="txt7_cus" />
+
+                                            <label class="form-label">Consultation Title</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <textarea name="description" cols="30" rows="5" class="form-control no-resize" id = "consultation-content" required></textarea> -->
+                                            <textarea class="form-control no-resize" cols="30" rows="5" id="txt8_cus"></textarea>
+
+                                            <label class="form-label">Consultation Content</label>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="submit" class="btn btn-primary waves-effect" id="edit-consultation-btn" style="display: none;" >EDIT COMPLETED</button>
+
+                                    <button type="button" class="button2" id="show_list_btn" style="background-color: coral;" onclick="back_to_list()">SHOW HISTORY LIST</button> -->
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" id="add-consultation-btn" class="btn btn-primary" data-dismiss="modal">ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--For customer search bar-->
+                <div class="box">
+                    <div class="container-4">
+                        <form>
+                            <fieldset>
+                                <table>
+                                    <tr>
+                                        <td><input class="cus_search" type="search" id="search-name" placeholder="이름"></td>
+                                        <td style="padding-left:15px"><input class="cus_search" type="date" id="search-birth" placeholder="생년월일"></td>
+                                        <td style="padding-left:15px" rowspan="2"><input class="search_btn" type="button" id="search-btn" value="search" onclick="const_search()"></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div text></div>
+                <p class="font_info_consult" style="font-family: 'Sunflower', sans-serif;;">
+                    고객 이름과 생년월일을 검색해주세요!
+                </p>
+            </div>
+
+            <script>
+                function const_search() {
+                    document.getElementById("history_form").style = "display:none"
+                    document.getElementById("consult_search_result").style = "display:block"
+                    document.getElementById("history_list").style = "display:none"
+                    document.getElementById("new_history_form").style = "display:none"
+                }
+            </script>
+
+            <!--For customer serach Result Start-->
+            <div class="card" id="consult_search_result" style="display: block;">
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>customer name</th>
+                                    <th>Birth</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customer-lists" onclick="select_customer()">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function select_customer() {
+                    document.getElementById("history_list").style = "display:block"
+                    document.getElementById("consult_search_result").style = "display:none"
+                    document.getElementById("new_history_form").style = "display:none"
+
+                }
+            </script>
+            <!--For customer serach Result End-->
+            <!--For customer History Result Start-->
+            <div class="card" id="history_list" style="display: none;">
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-hover dashboard-task-infos">
+                            <thead>
+                                <tr>
+                                    <th>history#</th>
+                                    <th>title</th>
+                                    <th>date</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody id="history-lists" onclick="select_history()">
+                            </tbody>
+                        </table>
+                        <button type="button" class="button" id="cons_prev_btn" style="background-color:rgb(169, 250, 253);" onclick="back_to_cus_list2()">back</button>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                function back_to_cus_list2() {
+                    document.getElementById("history_list").style = "display:none"
+                    document.getElementById("consult_search_result").style = "display:block"
+                }
+            </script>
+
+            <script>
+                function select_history() {
+                    document.getElementById("history_list").style = "display:none"
+                    document.getElementById("consult_search_result").style = "display:none"
+                    document.getElementById("history_form").style = "display:block"
+                    document.getElementById("new_history_form").style = "display:none"
+                }
+            </script>
+            <!--For customer History Result End-->
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Basic Validation -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card" id="history_form" style="display: none;">
+                            <div class="header">
+                                <button type="button" class="button" id="show_list_btn" style="margin-bottom: 20px;" style="margin-left: 20px;"
+                                        style="background-color: coral;" onclick="back_to_list()">
+                                    BACK
+                                </button>
+
+                                <h2>Consultation history</h2>
+
+                                <ul class="header-dropdown m-r--5">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                            <i class="material-icons">more_vert</i>
+                                        </a>
+                                        <ul class="dropdown-menu pull-right">
+                                            <li><a id="edit-consultation-btn">EDIT</li>
+                                            <li><a id="delete-consultation-btn">DELETE</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <div class="body">
+
+                                <form id="form_validation" method="POST">
+
+
+                                    <div class="form-line">
+                                        <!-- <input type="text" class="form-control" name="name", id="name" required> -->
+                                        <label class="form-label">Customer Name</label>
+                                        <input type="text" class="form-control" id="txt1" readonly>
+
+                                    </div>
+
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+                                    <div class="form-line">
+                                        <label class="form-label">Birth</label>
+                                        <input type="date" class="form-control" name="birth" required, id="birth" readonly>
+
+                                        <script>
+                                            document.getElementById('birth').valueAsDate = new Date();
+                                        </script>
+                                    </div>
+
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+                                    <div class="form-line">
+                                        <label class="form-label">Consultation Date</label>
+                                        <input type="date" class="form-control" name="date" required, id="now_date" readonly>
+                                        <script>
+                                            document.getElementById('now_date').valueAsDate = new Date();
+                                        </script>
+                                    </div>
+
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+                                    <div class="form-line">
+
+                                        <label class="form-label">Consultation Type&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <input type="checkbox" class="filled-in" id="treatment" checked onclick="return false;" />
+                                        <label for="treatment">Treatment&nbsp;&nbsp;&nbsp;</label>
+
+                                        <input type="checkbox" id="beauty" class="filled-in" aria-checked onclick="return false;" />
+                                        <label for="beauty">Beauty</label>
+                                    </div>
+
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+                                    <div class="form-line">
+                                        <!-- <input type="text" class="form-control" id="counselor" required> -->
+                                        <label class="form-label">Counselor</label>
+                                        <input type="text" class="form-control" id="txt6" readonly />
+
+                                    </div>
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+                                    <div class="form-line">
+                                        <!-- <input type="text" class="form-control" id="counsultation-title" required> -->
+                                        <label class="form-label">Consultation Title</label>
+
+                                        <input type="text" class="form-control" id="txt7" readonly />
+
+                                    </div>
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+
+                                    <div class="form-line">
+                                        <!-- <textarea name="description" cols="30" rows="5" class="form-control no-resize" id = "consultation-content" required></textarea> -->
+                                        <label class="form-label">Consultation Content</label>
+
+                                        <textarea class="form-control no-resize" cols="30" rows="5" id="txt8" readonly></textarea>
+
+                                    </div>
+                                    <p></p> <p></p> <p></p> <p></p> <p></p> <p></p>
+
+                            </div>
+
+                            <button type="button" class="btn btn-primary waves-effect" id="complete-btn" style="display: none;" onclick="hide_edit_btn()">EDIT COMPLETED</button>
+
+
+                            </form>
+
+                            <script>
+                                function hide_edit_btn() {
+                                    document.getElementById("complete-btn").style = "display:none"
+                                }
+                            </script>
+
+
+
+
+                            <script>
+                                function back_to_list() {
+                                    document.getElementById("history_form").style = "display:none"
+                                    document.getElementById("history_list").style = "display:block"
+                                }
+                            </script>
+
+                            <script>
+
+                            </script>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- #END# Basic Validation -->
+        <!-- Add history form -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="card" id="new_history_form" style="display: none;">
+                            <div class="header">
+                                <h2>New consultation history</h2>
+                            </div>
+                            <div class="body">
+                                <form id="new_form_validation" method="POST">
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" name="name", id="name" required> -->
+                                            <input type="text" class="form-control" id="txt1" />
+                                            <label class="form-label">Customer Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <label class="form-label">Birth</label>
+                                            <input type="date" class="form-control" name="birth" required, id="birth">
+
+                                            <script>
+                                                document.getElementById('birth').valueAsDate = new Date();
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <input type="date" class="form-control" name="date" required, id="now_date">
+                                            <label class="form-label">Consultation Date</label>
+                                            <script>
+                                                document.getElementById('now_date').valueAsDate = new Date();
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            Consultation Type&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="checkbox" class="filled-in" id="treatment" />
+                                            <label for="treatment">Treatment &nbsp;&nbsp;&nbsp;</label>
+                                            <input type="checkbox" id="beauty" class="filled-in" />
+                                            <label for="beauty">Beauty</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" id="counselor" required> -->
+                                            <input type="text" class="form-control" id="txt6" />
+
+                                            <label class="form-label">Counselor</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <input type="text" class="form-control" id="counsultation-title" required> -->
+                                            <input type="text" class="form-control" id="txt7" />
+
+                                            <label class="form-label">Consultation Title</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line">
+                                            <!-- <textarea name="description" cols="30" rows="5" class="form-control no-resize" id = "consultation-content" required></textarea> -->
+                                            <textarea class="form-control no-resize" cols="30" rows="5" id="txt8"></textarea>
+
+                                            <label class="form-label">Consultation Content</label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary waves-effect" id="edit-consultation-btn">SUBMIT</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- #END# Add history form  -->
+
+        <script>
+            function add_history() {
+                document.getElementById("new_history_form").style = "display:block"
+                document.getElementById("consult_search_result").style = "display:none"
+                document.getElementById("history_list").style = "display:none"
+                document.getElementById("history_form").style = "display:none"
+
+            }
+        </script>
+
+
+        <!-- Jquery Core Js -->
+        <script src="plugins/jquery/jquery.min.js"></script>
+
+        <!-- Bootstrap Core Js -->
+        <script src="plugins/bootstrap/js/bootstrap.js"></script>
+
+        <!-- Select Plugin Js -->
+        <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+        <!-- Slimscroll Plugin Js -->
+        <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+        <!-- Waves Effect Plugin Js -->
+        <script src="plugins/node-waves/waves.js"></script>
+
+        <!-- Custom Js -->
+        <script src="js/admin.js"></script>
+        <script src="js/pages/basic.js"></script>
+
+        <!-- Demo Js -->
+        <script src="js/pages/demo.js"></script>
+
+        <!--Firebase Js-->
+        <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js'></script>
+        <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js'></script>
+        <script src='https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+        <script src="js/firebase/fb-init.js"></script>
+        <script src="js/firebase/fb-main-user.js"></script>
+        <script src="js/firebase/fb-counsultation-history.js"></script>
+
+</body>
+</html>
